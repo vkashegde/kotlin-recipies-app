@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="50dp"
@@ -110,21 +112,22 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
+
+
         app:layout_constraintStart_toStartOf="parent"
-
-
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingRight="20dp"
+            android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:orientation="vertical">
+            android:paddingRight="20dp">
 
             <ImageView
                 android:id="@+id/salad"
@@ -153,10 +156,10 @@
                 android:id="@+id/maindish"
 
                 style="@style/my_style"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@id/salad"
                 android:background="@drawable/category_card_bc"
                 app:srcCompat="@drawable/drinks"
-                android:layout_toEndOf="@id/salad"
-                android:layout_marginStart="17dp"
 
                 />
 
@@ -182,10 +185,10 @@
                 android:id="@+id/drinks"
 
                 style="@style/my_style"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@id/maindish"
                 android:background="@drawable/category_card_bc"
                 app:srcCompat="@drawable/catergory_drinks"
-                android:layout_toEndOf="@id/maindish"
-                android:layout_marginStart="17dp"
 
                 />
 
@@ -196,9 +199,9 @@
                 android:layout_below="@id/drinks"
                 android:layout_alignStart="@id/drinks"
                 android:layout_alignEnd="@id/drinks"
-                android:layout_marginStart="17dp"
+                android:layout_marginStart="1dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginEnd="19dp"
+                android:layout_marginEnd="1dp"
                 android:layout_marginBottom="-3dp"
                 android:fontFamily="@font/poppinslight"
                 android:gravity="center"
@@ -211,10 +214,10 @@
                 android:id="@+id/deserts"
 
                 style="@style/my_style"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@id/drinks"
                 android:background="@drawable/category_card_bc"
                 app:srcCompat="@drawable/category_dessert"
-                android:layout_toEndOf="@id/drinks"
-                android:layout_marginStart="17dp"
 
                 />
 
@@ -236,4 +239,27 @@
                 android:textSize="17dp" />
         </RelativeLayout>
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="Popular Recipies"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_popular"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:listitem="@layout/popular_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
